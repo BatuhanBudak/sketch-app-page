@@ -1,0 +1,167 @@
+header {
+  width: 100%;
+  height: 4rem;
+}
+.nav {
+  width: 100%;
+  height: 100%;
+  padding: var(--size-500);
+}
+.nav__toggle,
+.nav__first__auth {
+  display: none;
+}
+
+@media screen and (max-width: 50em) {
+  .nav__first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav__toggle,
+  .nav__first__auth {
+    display: block;
+  }
+  .nav__toggle {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: block;
+    position: relative;
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    background: var(--clr-black-700);
+    width: 1.25rem;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .hamburger::before {
+    top: 6px;
+  }
+
+  .hamburger::after {
+    bottom: 6px;
+  }
+  .drawer-open .hamburger {
+    transform: rotate(0.625turn);
+  }
+
+  .drawer-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+  }
+
+  .drawer-open .hamburger::after {
+    opacity: 0;
+  }
+
+  .nav__first__auth {
+    font-size: var(--fs-nav-link);
+    text-decoration: none;
+    color: var(--clr-black-900);
+    font-weight: var(--fw-thick-regular);
+    transition: color 125ms ease-out;
+  }
+  .nav__drawer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 4rem;
+    overflow-y: scroll;
+  }
+  .drawer-open .nav__drawer {
+    display: block;
+  }
+
+  .nav__drawer__list__item__sub-list__item {
+    font-size: var(--fs-nav-link);
+  }
+  .nav__drawer__list {
+    padding-inline: var(--size-400);
+    margin-top: var(--size-300);
+  }
+  .nav__drawer__list__item {
+    position: relative;
+  }
+  .nav__drawer__list__item:last-child {
+    border-bottom: 1px solid var(--clr-black-100);
+  }
+  .nav__drawer__list__item,
+  .nav__drawer__link {
+    border-top: 1px solid var(--clr-black-100);
+    padding-block: var(--size-400);
+  }
+  .nav__drawer__list__item__btn {
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    transform: rotate(0);
+  }
+  .nav__drawer__list__item__link:active,
+  .nav__drawer__list__item__btn:active,
+  .nav__drawer__list__item__link:hover,
+  .nav__drawer__list__item__btn:hover {
+    color: var(--clr-black-480);
+  }
+
+  .nav__drawer__list__item__sub-list {
+    padding-inline: var(--size-300);
+    font-size: var(--fs-nav-sub-link);
+  }
+  .nav__drawer__list__item__sub-list__item {
+    margin-bottom: var(--size-300);
+    padding-top: var(--size-300);
+    border-top: 1px solid var(--clr-black-100);
+  }
+  .nav__drawer__list__item__sub-list__item:nth-child(1) {
+    margin-top: var(--size-400);
+  }
+
+  .nav__drawer__list__item__btn.has-arrow::after {
+    content: url("../public/icons/chewron-down.svg");
+    position: absolute;
+    display: block;
+    box-sizing: content-box;
+    right: 0;
+    top: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: 0.4s ease-in-out;
+  }
+  .nav__drawer__list__item__btn.has-arrow.rotate::after {
+    transform: rotateZ(180deg);
+  }
+  .nav__drawer__link__container {
+    border-bottom: 1px solid var(--clr-black-100);
+    padding: var(--size-300);
+  }
+  .nav__drawer__link {
+    display: block;
+    border-radius: 8px;
+    text-align: center;
+    padding-block: var(--size-200);
+    font-size: var(--fs-nav-link);
+  }
+  .nav__menu {
+    display: none;
+  }
+}
