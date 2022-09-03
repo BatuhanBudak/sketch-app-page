@@ -1,10 +1,16 @@
-import React, { useRef, useState } from "react";
 import useToggle from "../../hooks/useToggle";
+import { ArrowTopRight } from "../Icon";
 
 export default function NavDrawer({ drawerOpen }) {
-  const [productToggled, toggleProduct] = useToggle();
-  const [learnToggled, toggleLearn] = useToggle();
-  const [supportToggled, toggleSupport] = useToggle();
+  const [productToggled, toggleProduct, closeProductList] = useToggle();
+  const [learnToggled, toggleLearn, closeLearnList] = useToggle();
+  const [supportToggled, toggleSupport, closeSupportList] = useToggle();
+
+  function closeAllSubLists() {
+    closeProductList();
+    closeLearnList();
+    closeSupportList();
+  }
 
   return (
     <div className="nav__drawer" aria-expanded={!drawerOpen}>
@@ -14,7 +20,10 @@ export default function NavDrawer({ drawerOpen }) {
             className={`nav__drawer__list__item__btn  has-arrow ${
               productToggled ? "rotate" : ""
             }`}
-            onClick={toggleProduct}
+            onClick={() => {
+              closeAllSubLists();
+              toggleProduct();
+            }}
           >
             Product
           </button>
@@ -24,8 +33,9 @@ export default function NavDrawer({ drawerOpen }) {
                 <a
                   href=""
                   className="nav__drawer__list__item__sub-list__item__link"
-                ></a>
-                Design
+                >
+                  Design
+                </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
                 <a
@@ -83,7 +93,10 @@ export default function NavDrawer({ drawerOpen }) {
             className={`nav__drawer__list__item__btn  has-arrow ${
               learnToggled ? "rotate" : ""
             }`}
-            onClick={toggleLearn}
+            onClick={() => {
+              closeAllSubLists();
+              toggleLearn();
+            }}
           >
             Learn
           </button>
@@ -103,7 +116,9 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Course: Sketch 101
-                  <span>NEW</span>
+                  <span className="new-label" aria-hidden={true}>
+                    NEW
+                  </span>
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
@@ -120,7 +135,9 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Events {"&"}Meetups
-                  <span>1</span>
+                  <span className="event-label" aria-hidden={true}>
+                    1
+                  </span>
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
@@ -155,7 +172,10 @@ export default function NavDrawer({ drawerOpen }) {
             className={`nav__drawer__list__item__btn  has-arrow ${
               supportToggled ? "rotate" : ""
             }`}
-            onClick={toggleSupport}
+            onClick={() => {
+              closeAllSubLists();
+              toggleSupport();
+            }}
           >
             Support
           </button>
@@ -167,6 +187,7 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Sketch Help
+                  <ArrowTopRight />
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
@@ -175,7 +196,6 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Contact Us
-                  <span>NEW</span>
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
@@ -184,6 +204,7 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link has-arrow"
                 >
                   Service Status
+                  <ArrowTopRight />
                 </a>
               </li>
             </ul>

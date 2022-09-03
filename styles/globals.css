@@ -59,7 +59,7 @@ html:focus-within {
   --fs-label: var(--fs-100);
   --fs-button-link: clamp(var(--fs-200), var(--fs-300), var(--fs-400));
   --fs-nav-link: var(--fs-400);
-  --fs-nav-sub-link: var(--fs-300);
+  --fs-nav-sub-link: var(--fs-200);
   --fs-footer: var(--fs-400);
 
   --size-100: 0.25rem;
