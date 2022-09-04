@@ -52,6 +52,9 @@ header {
 }
 
 @media screen and (max-width: 54.99em) {
+  header {
+    position: sticky;
+  }
   .nav__first {
     display: flex;
     align-items: center;
@@ -213,15 +216,28 @@ header {
   }
 }
 @media screen and (min-width: 55em) {
+  .header {
+    height: 5rem;
+  }
   .nav {
     display: flex;
     height: auto;
     max-width: 75rem;
     margin-inline: auto;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  .nav__first__icon {
+    display: flex;
+    height: 100%;
+    align-items: center;
   }
 
   .diamond {
     vertical-align: middle;
+  }
+  .diamond:hover {
+    color: rgba(0, 0, 0, 0.5);
   }
   .nav__menu {
     display: grid;
@@ -241,6 +257,10 @@ header {
     font-weight: var(--fw-thick-regular);
     position: relative;
     padding-block: 1rem;
+    transition: color 0.4s ease-in-out;
+  }
+  .nav__menu__list__item:hover > * {
+    color: rgba(0, 0, 0, 0.5);
   }
 
   .nav__menu__list__item__button {
@@ -252,7 +272,14 @@ header {
   }
   .nav__menu__list__item--last-item {
     padding-right: 2rem;
-    border-right: 0.01px solid var(--clr-black-480);
+  }
+  .nav__menu__list__item--last-item::before {
+    position: absolute;
+    content: "";
+    width: 1.5px;
+    height: 1.5rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.08);
   }
   .nav__menu__list__item__button.has-arrow::after {
     content: url("../public/icons/chewron-down.svg");
@@ -261,8 +288,9 @@ header {
     box-sizing: content-box;
     top: 50%;
     transform: translateY(-50%);
-    width: 1.25rem;
-    height: 1.25rem;
+
+    width: 1.5rem;
+    height: 1.5rem;
     transition: 0.4s ease-in-out;
   }
   .nav__menu__list__item__sub-list-container {
@@ -282,6 +310,7 @@ header {
   .nav__menu__list__item.has-content:hover
     > .nav__menu__list__item__sub-list-container {
     display: block;
+    color: rgba(0, 0, 0, 0.5);
   }
   .nav__menu__list__item__sub-list-container:hover {
     display: block;
@@ -321,11 +350,15 @@ header {
     font-size: var(--fs-nav-link);
     font-weight: var(--fw-thick-regular);
   }
+  .nav__menu__auth__link:first-child:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
   .nav__menu__auth__link.button {
     border-radius: 0.5rem;
     padding: var(--size-200);
     font-size: var(--fs-nav-sub-link);
   }
+
   .nav__menu__auth__link:first-child {
     padding: 0 1rem;
   }

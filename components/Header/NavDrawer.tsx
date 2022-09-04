@@ -144,15 +144,17 @@ export default function NavDrawer({ drawerOpen }) {
                 <a
                   href=""
                   className="nav__drawer__list__item__sub-list__item__link"
-                ></a>
-                Newsletter
+                >
+                  Newsletter
+                </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
                 <a
                   href=""
                   className="nav__drawer__list__item__sub-list__item__link"
-                ></a>
-                Research Labs
+                >
+                  Research Labs
+                </a>
               </li>
             </ul>
           )}
