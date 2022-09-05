@@ -22,7 +22,7 @@ html:focus-within {
   --clr-black-700: hsla(0, 0%, 0%, 0.7);
   --clr-black-650: hsla(0, 0%, 0%, 0.65);
   --clr-black-480: hsla(0, 0%, 0%, 0.48);
-  --clr-black-100: hsla(0, 0%, 0%, 0.1);
+  --clr-black-100: rgba(0, 0, 0, 0.1);
   --clr-orange: hsl(22, 100%, 76%);
   --clr-grey: hsl(218, 5%, 39%);
   --clr-background-default: hsla(0, 0%, 0%, 0.08);
@@ -54,7 +54,7 @@ html:focus-within {
   --fs-950: 4.75rem;
   --fs-1000: 5rem;
 
-  --fs-body: clamp(var(--fs-400), 1.15rem, var(--fs-500));
+  --fs-body: clamp(var(--fs-400), 1.025rem, var(--fs-500));
   --fs-primary-heading: clamp(var(--fs-700), 6vw, var(--fs-950));
   --fs-secondary-heading: clamp(var(--fs-600), 5vw, var(--fs-700));
   --fs-heading-excerpt: clamp(var(--fs-500), 1.35rem, var(--fs-600));
@@ -115,11 +115,6 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 /* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
@@ -164,6 +159,11 @@ body {
   font-size: var(--fs-body);
   font-family: var(--ff-body);
   color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  position: relative;
 }
 
 /* button */
@@ -206,13 +206,43 @@ body {
 
 .icon {
   display: inline-block;
-  width: var(--icon-size-default);
-  height: var(--icon-size-default);
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
+body.nav-open {
+  overflow-y: hidden;
+}
 
-.gutter-bottom {
-  margin-bottom: 2rem;
+.page-overlay {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  padding: 0;
+  overflow-y: scroll;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 250ms ease-out, visibility 0s linear 250ms;
+  will-change: opacity;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+@supports (
+  (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
+) {
+  .page-overlay {
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+.nav-open .page-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: opacity 250ms ease-out, visibility 0s linear;
 }

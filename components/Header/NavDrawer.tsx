@@ -116,9 +116,7 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Course: Sketch 101
-                  <span className="new-label" aria-hidden={true}>
-                    NEW
-                  </span>
+                  <span className="new-label">NEW</span>
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">
@@ -135,9 +133,7 @@ export default function NavDrawer({ drawerOpen }) {
                   className="nav__drawer__list__item__sub-list__item__link"
                 >
                   Events {"&"}Meetups
-                  <span className="event-label" aria-hidden={true}>
-                    1
-                  </span>
+                  <span className="event-label">1</span>
                 </a>
               </li>
               <li className="nav__drawer__list__item__sub-list__item">

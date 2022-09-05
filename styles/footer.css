@@ -1,0 +1,186 @@
+.main-footer {
+  line-height: 1.25;
+  color: var(--clr-black-700);
+  flex: none;
+  font-weight: var(--fw-thin);
+  margin-bottom: var(--fs-800);
+}
+.main-footer__footer {
+  background-color: transparent;
+}
+.main-footer__content {
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
+.main-footer__nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  column-gap: 0.75rem;
+  row-gap: var(--fs-700);
+  padding-block: var(--fs-800) var(--fs-700);
+}
+
+@media screen and (min-width: 43.375em) {
+  .main-footer__nav {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    column-gap: var(--fs-700);
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .main-footer__nav {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    column-gap: var(--fs-600);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .main-footer__nav {
+    grid-template-columns: repeat(auto-fit, minmax(10.625rem, 1fr));
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .main-footer__nav {
+    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
+    column-gap: 4.6875rem;
+  }
+}
+
+.main-footer__nav__item {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  line-height: normal;
+  background-color: transparent;
+}
+
+.main-footer__nav__heading,
+.main-footer__nav__item {
+  line-height: var(--fs-600);
+  margin-bottom: 0.5rem;
+}
+
+.main-footer__nav__heading {
+  color: var(--clr-dark);
+  font-weight: var(--fw-semi-bold);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.main-footer__nav__item {
+  display: flex;
+  font-weight: var(--fw-regular);
+  color: rgba(0, 0, 0, 0.64);
+  transition: color 125ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.main-footer__nav__item:not([target="_blank"]) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.main-footer__nav__item:active,
+.main-footer__nav__item:focus,
+.main-footer__nav__item:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.new-label--footer {
+  padding: 0.5rem 0.625rem;
+  margin-left: var(--size-300);
+  line-height: 0;
+  text-transform: uppercase;
+}
+
+.event-label--footer {
+  margin-left: 0.5rem;
+  display: inline-block;
+  vertical-align: text-bottom;
+  user-select: none;
+}
+.main-footer__sketch {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5625rem;
+  padding-bottom: 2.625rem;
+}
+
+@media screen and (min-width: 64em) {
+  .main-footer__sketch {
+    padding-bottom: 2.625rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .main-footer__sketch {
+    flex-direction: row;
+    padding-top: 2.375rem;
+    padding-bottom: var(--fs-1000);
+  }
+}
+
+.main-footer__logo,
+.main-footer__notice,
+.main-footer__social {
+  flex: 1;
+}
+.main-footer__logo__link,
+.main-footer__social__link {
+  opacity: 0.48;
+  transition: opacity 125ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.main-footer__logo__link:hover,
+.main-footer__social__link:hover {
+  opacity: 0.8;
+}
+@media screen and (max-width: 767px) {
+  .main-footer__logo {
+    display: none;
+  }
+}
+.main-footer__notice {
+  color: var(--clr-black-480);
+  text-align: center;
+  font-size: var(--fs-200);
+  line-height: var(--fs-500);
+  font-weight: var(--fw-regular);
+}
+.main-footer__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.375rem;
+}
+
+@media screen and (min-width: 48em) {
+  .main-footer__social {
+    margin-bottom: 0;
+  }
+}
+
+.main-footer__social__item:not(:last-child) {
+  margin-right: var(--fs-600);
+}
+@media screen and (min-width: 48em) {
+  .main-footer__social__item:not(:last-child) {
+    margin-right: var(--fs-400);
+  }
+}
+
+.main-footer__social__icon {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+@media screen and (min-width: 48em) {
+  .main-footer__social__icon {
+    width: var(--icon-size-default);
+    height: var(--icon-size-default);
+  }
+}

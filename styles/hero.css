@@ -1,6 +1,61 @@
 #content {
   margin-bottom: auto;
 }
+.apps__background {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.apps__background-image {
+  width: 120rem;
+  height: 62.5rem;
+  position: absolute;
+  top: 24rem;
+  left: calc(-60rem + 50vw);
+}
+@media screen and (min-width: 40em) {
+  .apps__background-image {
+    top: 15rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  .apps__background-image {
+    top: calc(20vw - 3.5rem);
+    height: 75rem;
+    left: calc(-63rem + 50vw);
+  }
+  @media screen and (min-width: 53.125em) {
+    .apps__background-image {
+      top: 20vw;
+    }
+  }
+
+  @media screen and (min-width: 64em) {
+    .apps__background-image {
+      top: 18rem;
+      height: 75rem;
+      left: calc(-60rem + 50vw);
+    }
+  }
+  @media screen and (min-width: 76.25em) {
+    .apps__background-image {
+      top: 17.25rem;
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    .apps__background-image {
+      top: calc(-11vw + 32rem);
+      height: 71vw;
+      width: 100%;
+      left: 0;
+    }
+  }
+}
 .pad-viewport {
   --inline-padding: var(--size-400);
 

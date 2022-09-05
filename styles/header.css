@@ -1,9 +1,30 @@
 header {
   width: 100%;
   height: 4rem;
+  display: block;
+}
+.visuallyhidden.skip-nav:focus {
+  position: absolute;
+  z-index: 100001;
+  left: 1rem;
+  top: 1rem;
+  display: inline-block;
+  width: unset;
+  height: unset;
+  font-size: var(--fs-400);
+  clip: unset;
+  line-height: var(--fs-500);
+  border-radius: 6px;
+  font-weight: 600;
+  background-color: var(--clr-white);
+  color: #000;
+  box-shadow: 0 0 0 0.1875rem rgb(0 0 0 / 10%);
+  border: solid 2px;
+  padding: 0.75rem 1rem;
 }
 .nav {
   width: 100%;
+  display: block;
   height: 100%;
   padding: var(--size-500);
 }
@@ -37,10 +58,10 @@ header {
   display: inline-block;
   margin-left: auto;
   font-size: var(--fs-label);
-  padding: 0.25rem 0.5rem;
+  padding: var(--size-100) var(--size-200);
   font-weight: var(--fw-semi-bold);
   text-align: center;
-  min-width: 1.5rem;
+  min-width: var(--size-500);
   border-radius: 100vh;
   color: var(--clr-black-700);
   background-color: rgba(0, 0, 0, 0.08);
@@ -48,13 +69,30 @@ header {
 .arrow-top-right {
   fill: var(--clr-black-480);
   color: var(--clr-black-480);
-  margin-left: 0.5rem;
+  margin-left: var(--size-200);
 }
 
 @media screen and (max-width: 54.99em) {
   header {
     position: sticky;
+    top: 0;
+    z-index: 5;
+    box-shadow: 0 0 0 0.0625rem rgb(0 0 0 / 10%);
   }
+  .nav-open header {
+    box-shadow: none;
+  }
+
+  @supports (
+    (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
+  ) {
+    header {
+      background-color: rgba(255, 255, 255, 0.64);
+      -webkit-backdrop-filter: blur(40px);
+      backdrop-filter: blur(40px);
+    }
+  }
+
   .nav__first {
     display: flex;
     align-items: center;
@@ -120,11 +158,13 @@ header {
   }
   .nav__drawer {
     position: fixed;
-    inset: 0;
+    background-color: var(--clr-white);
     left: 0;
+    top: 0;
     width: 100%;
     margin-top: 4rem;
     overflow-y: scroll;
+    z-index: 2;
   }
   .drawer-open .nav__drawer {
     display: block;

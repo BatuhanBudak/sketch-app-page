@@ -1,14 +1,21 @@
+import Image from "next/image";
+
 export default function MainContent() {
   return (
     <main id="content">
       <div className="pad-viewport">
         <div className="apps wrapper">
-          {/* <div className="apps__background">
-      <img src="https://sketch-cdn.imgix.net/assets/pages/apps/page-background@2x.png?ixlib=rb-4.0.1&amp;w=3000&amp;q=95&amp;fm=png&amp;auto=format&amp;s=09dbf2b54db3fab81bfc7fce74cb84fd" srcset="
-          https://sketch-cdn.imgix.net/assets/pages/apps/page-background@2x.png?ixlib=rb-4.0.1&amp;w=1920&amp;q=95&amp;fm=png&amp;auto=format&amp;s=58d2369c65ec133adfd30fe104c14107 1920w,
-          https://sketch-cdn.imgix.net/assets/pages/apps/page-background@2x.png?ixlib=rb-4.0.1&amp;w=3000&amp;q=95&amp;fm=png&amp;auto=format&amp;s=09dbf2b54db3fab81bfc7fce74cb84fd 3000w
-        " sizes="(min-width: 1600px) 140%, 100%" alt="page background" className="apps__background-image" ">
-    </div> */}
+          <div className="apps__background">
+            <div className="apps__background-image">
+              <Image
+                src={"/images/page-background-2x-3000.avif"}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+                objectPosition={"center"}
+              />
+            </div>
+          </div>
 
           <div className="hero">
             <h1 className="hero__heading entrance total-words">
