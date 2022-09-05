@@ -1,12 +1,14 @@
 import React from "react";
 import { Diamond } from "../Icon";
 
-export default function NavFirst({ toggleDrawerOpen }) {
+export default function NavFirst({ toggleDrawerOpen, drawerOpen }) {
   return (
     <div className="nav__first">
       <button
+        type="button"
         className="nav__toggle"
-        aria-controls="mobile-nav"
+        aria-expanded={drawerOpen}
+        aria-haspopup="dialog"
         onClick={toggleDrawerOpen}
       >
         <span className="hamburger"></span>

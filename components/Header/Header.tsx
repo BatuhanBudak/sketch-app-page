@@ -21,7 +21,7 @@ export default function Header() {
         Skip Navigation
       </a>
       <nav className={`nav ${drawerOpen ? "drawer-open" : ""}`}>
-        <NavFirst toggleDrawerOpen={toggleDrawerOpen} />
+        <NavFirst toggleDrawerOpen={toggleDrawerOpen} drawerOpen={drawerOpen} />
         <NavMenu />
         <NavDrawer drawerOpen={drawerOpen} />
       </nav>
