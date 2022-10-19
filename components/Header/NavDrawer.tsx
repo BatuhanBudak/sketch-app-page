@@ -1,7 +1,7 @@
 import useToggle from "../../hooks/useToggle";
 import { ArrowTopRight } from "../Icon";
 
-export default function NavDrawer({ drawerOpen }) {
+export default function NavDrawer({ drawerOpen }: { drawerOpen: boolean }) {
   const [productToggled, toggleProduct, closeProductList] = useToggle();
   const [learnToggled, toggleLearn, closeLearnList] = useToggle();
   const [supportToggled, toggleSupport, closeSupportList] = useToggle();

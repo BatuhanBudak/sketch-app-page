@@ -9,5 +9,5 @@ export default function useToggle(initialValue = false) {
     function closeState(){
       setToggled(false);
     }
-    return [toggled, toggleState, closeState];
+    return [toggled, toggleState, closeState] as const;
 }

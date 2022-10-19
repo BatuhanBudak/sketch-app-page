@@ -1,7 +1,10 @@
 import React from "react";
 import { Diamond } from "../Icon";
-
-export default function NavFirst({ toggleDrawerOpen, drawerOpen }) {
+type Props = {
+  toggleDrawerOpen: () => void;
+  drawerOpen: boolean;
+};
+export default function NavFirst({ toggleDrawerOpen, drawerOpen }: Props) {
   return (
     <div className="nav__first">
       <button

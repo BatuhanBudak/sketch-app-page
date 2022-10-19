@@ -240,7 +240,7 @@ export default function Footer() {
             </nav>
             <div className="main-footer__sketch">
               <div className="main-footer__logo">
-                <a href="/" className="main-footer__logo__link">
+                <a href="" className="main-footer__logo__link">
                   <span className="visuallyhidden">Home</span>
                   <Diamond />
                 </a>
